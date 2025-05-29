@@ -1,7 +1,6 @@
 package com.aminbassim.ollama.services;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.ollama.OllamaChatModel;
@@ -11,15 +10,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OllamaService {
-
-    private static final Logger logger = LoggerFactory.getLogger(OllamaService.class);
     @Autowired
     private OllamaChatModel chatModel;
-
+    private static final Logger logger = org.slf4j.LoggerFactory.getLogger(OllamaService.class);
     public String generateResult(String prompt) {
 
         try {
-
             OllamaOptions options = new OllamaOptions();
             options.setModel("llama2");
 

@@ -15,7 +15,7 @@ public class OllamaController {
     private OllamaService ollamaService;
 
     @GetMapping("in")
-    public String generate(@RequestParam(value = "message") String message) {
+    public String generate(@RequestParam(value = "promptMessage") String message) {
         return ollamaService.generateResult(message);
     }
 }
